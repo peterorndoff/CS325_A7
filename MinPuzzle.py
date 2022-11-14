@@ -13,7 +13,13 @@ def minEffort(puzzle):
     return distance_array
 
 
-def dijkstras(puzzle, distance_array, visited_array):
+def dikstras(puzzle):
+
+
+    
+
+
+"""def dijkstras(puzzle, distance_array, visited_array):
 
     i = 0
     j = 0
@@ -37,9 +43,6 @@ def dijkstras(puzzle, distance_array, visited_array):
                 if puzzle[i][j+1] < puzzle[i-1][j]: # Column 1 Comparative Row under.
 
 
-
-
-
                 # Then can only go right or down.
 
             if j == puzzle_size: # Checks if at bottom left corner
@@ -49,7 +52,7 @@ def dijkstras(puzzle, distance_array, visited_array):
 
         if i == puzzle_size: # At Right edge of puzzle: Can only go UP DOWN or RIGHT
             if j == puzzle_size:
-                # Can only go LEFT or DOWN.
+                # Can only go LEFT or DOWN."""
 
 """
 You are given a 3-D puzzle. The length and breadth of the puzzle is given by a 2D matrix
