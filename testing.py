@@ -2,6 +2,7 @@ import heapq
 
 
 def calculate_distances(graph, starting_vertex):
+
     distances = {vertex: float('infinity') for vertex in graph}
     distances[starting_vertex] = 0
 
@@ -25,6 +26,7 @@ def calculate_distances(graph, starting_vertex):
 
     return distances
 
+puzzle = [[1, 3, 5], [2, 8, 3], [3, 4, 5]]
 
 example_graph = {
     'U': {'V': 2, 'W': 5, 'X': 1},
