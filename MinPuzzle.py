@@ -34,8 +34,7 @@ def minEffort(puzzle):
             new_x_direction = x_direction + i  # Calculates new X direction via current j indexes
             new_y_direction = y_direction + j  # Calculates new Y direction via current i index
 
-            if  puzzle[new_x_direction][new_y_direction] is not None and 0 <= new_x_direction < rows\
-                    and 0 <= new_y_direction < columns:  # Comparative if move is valid:
+            if puzzle[new_x_direction][new_y_direction] is not None and 0 <= new_x_direction < rows and 0 <= new_y_direction < columns:  # Comparative if move is valid:
 
                 new = max(current_node, puzzle[new_x_direction][new_y_direction] - puzzle[x_direction][
                     y_direction])  # Grabs max of the current node/ Absolute of new node - currrent node.
