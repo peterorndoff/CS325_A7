@@ -1,29 +1,34 @@
+# Name: Peter Orndoff
+# Description: Assignment
+# Date: November 15th 2022
+
 import heapq
 
-def minEffort(heights):
 
-   r,c=len(heights),len(heights[0])
-   queue=[(0,0,0)]
+def minEffort(puzzle):
 
-   while queue:
+    rows = len(puzzle)
+    columns = len(puzzle[0])
+    directions = [[1, 0], [-1, 0], [0, 1], [0, -1]]
+    queue = [(0, 0, 0)]
 
-      cur=heapq.heappop(queue)
-      c_eff=cur[0]
-      x=cur[1]
-      y=cur[2]
+    while queue:
 
-      if x==r-1 and y==c-1:
-         return c_eff
+        current = heapq.heappop(queue)
+        current_node = current[0]
+        x_direction = current[1]
+        y_direction = current[2]
 
-      if heights[x][y]=="":
-         continue
+        if len(puzzle) - 1 == x_direction and len(puzzle[0]) - 1 == y_direction:
+            return current_node
 
-      for dx,dy in [[1,0],[-1,0],[0,1],[0,-1]]:
-         newx=x+dx
-         newy=y+dy
-         if 0<=newx<r and 0<=newy<c and heights[newx][newy]!="":
+        for i, j in directions:
+            new_x_direction = x_direction + i
+            new_y_direction = y_direction + j
 
-            eff = max(c_eff, abs(heights[newx][newy] - heights[x][y]))
-            heapq.heappush(queue,(eff, newx, newy))
+            if 0 <= new_x_direction < rows and 0 <= new_y_direction < columns and puzzle[new_x_direction][new_y_direction] is not None:
 
-      heights[x][y]=""
+                new = max(current_node, abs(puzzle[new_x_direction][new_y_direction] - puzzle[x_direction][y_direction]))
+                heapq.heappush(queue,(new, new_x_direction, new_y_direction))
+
+        puzzle[x_direction][y_direction] = None
