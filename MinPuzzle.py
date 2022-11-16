@@ -19,9 +19,9 @@ def minEffort(puzzle):
     while queue:  # While queue is not empty
 
         current = heapq.heappop(queue)
-        current_node = current[current_index]
-        x_direction = current[x_queue_index]
-        y_direction = current[y_queue_index]
+        current_node = current[0]
+        x_direction = current[1]
+        y_direction = current[2]
 
         if puzzle[x_direction][y_direction] is None: # If None is found, continue with the while loop.
             continue
