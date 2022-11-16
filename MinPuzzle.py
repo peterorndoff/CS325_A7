@@ -19,9 +19,9 @@ def minEffort(puzzle):
     while queue:  # While queue is not empty
 
         current = heapq.heappop(queue)
-        current_node = current[0]
-        x_direction = current[1]
-        y_direction = current[2]
+        current_node = current[current_index]
+        x_direction = current[x_queue_index]
+        y_direction = current[y_queue_index]
 
         if puzzle[x_direction][y_direction] is None: # If None is found, continue with the while loop.
             continue
@@ -34,7 +34,7 @@ def minEffort(puzzle):
             new_x_direction = x_direction + i  # Calculates new X direction via current j indexes
             new_y_direction = y_direction + j  # Calculates new Y direction via current i index
 
-            if puzzle[new_x_direction][new_y_direction] is not None and 0 <= new_x_direction < rows and 0 <= new_y_direction < columns:  # Comparative if move is valid:
+            if 0 <= new_x_direction < rows and 0 <= new_y_direction < columns and puzzle[new_x_direction][new_y_direction] is not None:  # Comparative if move is valid:
 
                 new = max(current_node, puzzle[new_x_direction][new_y_direction] - puzzle[x_direction][
                     y_direction])  # Grabs max of the current node/ Absolute of new node - currrent node.
