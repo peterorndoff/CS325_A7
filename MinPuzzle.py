@@ -7,19 +7,17 @@ import heapq
 
 def minEffort(puzzle):
 
-    queue = []  # Creates Queue
+    queue = [(0, 0, 0)]  # Creates Queue
     rows = len(puzzle)  # Grabs length of Rows
     columns = len(puzzle[0])  # Grabs length of Columns
     directions = [[1, 0], [-1, 0], [0, 1], [0, -1]]  # Directional vectors
 
+    queue = [(0, 0, 0)]  # Creates Queue
     current_index = 0
     x_queue_index = 1
     y_queue_index = 2
 
     while queue:  # While queue is not empty
-
-        if queue is None:
-            queue = [(0, 0, 0)]
 
         current = heapq.heappop(queue)
         current_node = current[current_index]
