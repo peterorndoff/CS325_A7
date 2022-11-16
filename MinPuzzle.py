@@ -7,7 +7,6 @@ import heapq
 
 def minEffort(puzzle):
 
-    queue = [(0, 0, 0)]  # Creates Queue
     rows = len(puzzle)  # Grabs length of Rows
     columns = len(puzzle[0])  # Grabs length of Columns
     directions = [[1, 0], [-1, 0], [0, 1], [0, -1]]  # Directional vectors
