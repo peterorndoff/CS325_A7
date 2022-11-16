@@ -4,7 +4,6 @@
 
 import heapq
 
-
 def minEffort(puzzle):
 
     rows = len(puzzle)
