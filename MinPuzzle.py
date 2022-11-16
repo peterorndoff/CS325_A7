@@ -21,6 +21,9 @@ def minEffort(puzzle):
         if len(puzzle) - 1 == x_direction and len(puzzle[0]) - 1 == y_direction:
             return current_node
 
+        if puzzle[x_direction][y_direction] is None:
+            continue
+
         for i, j in directions:
             new_x_direction = x_direction + i
             new_y_direction = y_direction + j
