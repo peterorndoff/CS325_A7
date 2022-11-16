@@ -36,8 +36,8 @@ def minEffort(puzzle):
 
             if 0 <= new_x_direction < rows and 0 <= new_y_direction < columns and puzzle[new_x_direction][new_y_direction] is not None:  # Comparative if move is valid:
 
-                new = max(current_node, (abs(puzzle[new_x_direction][new_y_direction]) - abs(puzzle[x_direction][
-                    y_direction])))  # Grabs max of the current node/ Absolute of new node - currrent node.
+                new = max(current_node, abs((puzzle[new_x_direction][new_y_direction]) - puzzle[x_direction][
+                    y_direction]))  # Grabs max of the current node/ Absolute of new node - currrent node.
                 heapq.heappush(queue, (new, new_x_direction, new_y_direction))  # Pushes new, and it's x/y directions.
 
         puzzle[x_direction][y_direction] = None  # Set that index equal to None.
