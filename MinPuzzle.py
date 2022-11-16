@@ -28,9 +28,9 @@ def minEffort(puzzle):
             new_x_direction = x_direction + i
             new_y_direction = y_direction + j
 
-            if 0 <= new_x_direction < rows and 0 <= new_y_direction < columns and puzzle[new_x_direction][new_y_direction] != "":
+            if 0 <= new_x_direction < rows and 0 <= new_y_direction < columns and puzzle[new_x_direction][new_y_direction] is not None:
 
                 new = max(current_node, abs(puzzle[new_x_direction][new_y_direction] - puzzle[x_direction][y_direction]))
                 heapq.heappush(queue,(new, new_x_direction, new_y_direction))
 
-        puzzle[x_direction][y_direction] = ""
+        puzzle[x_direction][y_direction] = None
